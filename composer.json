@@ -1,0 +1,88 @@
+{
+  "name": "publishpress/pimple-pimple",
+  "version": "3.5.0.1",
+  "type": "library",
+  "description": "Pimple, a simple Dependency Injection Container, prefixed for PublishPress",
+  "keywords": [
+    "dependency injection",
+    "container",
+    "publishpress"
+  ],
+  "homepage": "https://github.com/silexphp/Pimple/",
+  "license": "MIT",
+  "authors": [
+    {
+      "name": "Fabien Potencier",
+      "email": "fabien@symfony.com"
+    },
+    {
+      "name": "PublishPress",
+      "email": "help@publishpress.com"
+    }
+  ],
+  "autoload": {
+    "files": [
+      "src-prefixed/autoload.php"
+    ]
+  },
+  "require": {
+    "php": ">=7.2.5",
+    "publishpress/psr-container": "2.0.1.1"
+  },
+  "require-dev": {
+    "pimple/pimple": "3.5.0",
+    "brianhenryie/strauss": "^0.14.0"
+  },
+  "extra": {
+    "strauss": {
+      "target_directory": "src-prefixed",
+      "namespace_prefix": "PublishPress\\",
+      "classmap_prefix": "PublishPress_",
+      "constant_prefix": "PUBLISHPRESS_",
+      "include_author": "true",
+      "classmap_output": "true",
+      "packages": [
+        "pimple/pimple",
+        "psr/container"
+      ],
+      "override_autoload": {
+      },
+      "exclude_from_copy": {
+        "packages": [
+        ],
+        "namespaces": [
+        ],
+        "file_patterns": [
+        ]
+      },
+      "exclude_from_prefix": {
+        "packages": [
+        ],
+        "namespaces": [
+        ],
+        "file_patterns": [
+        ]
+      },
+      "namespace_replacement_patterns": {
+      },
+      "delete_vendor_packages": true,
+      "delete_vendor_files": true
+    }
+  },
+  "scripts": {
+    "strauss": [
+      "vendor/bin/strauss"
+    ],
+    "updateLibraries": [
+      "php scripts/post-update.php"
+    ],
+    "post-install-cmd": [
+      "@strauss",
+      "@updateLibraries"
+    ],
+    "post-update-cmd": [
+      "@strauss",
+      "@updateLibraries"
+    ]
+  }
+}
