@@ -26,7 +26,7 @@
   },
   "require": {
     "php": ">=7.2.5",
-    "publishpress/psr-container": "2.0.1.1"
+    "publishpress/psr-container": "^2.0.1.1"
   },
   "require-dev": {
     "pimple/pimple": "3.5.0",
