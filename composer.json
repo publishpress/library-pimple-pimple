@@ -1,6 +1,5 @@
 {
   "name": "publishpress/pimple-pimple",
-  "version": "3.5.0.1",
   "type": "library",
   "description": "Pimple, a simple Dependency Injection Container, prefixed for PublishPress",
   "keywords": [
