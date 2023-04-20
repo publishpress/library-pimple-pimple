@@ -16,7 +16,7 @@ if (! function_exists('add_action')) {
     return;
 }
 
-if (! function_exists(__NAMESPACE__ . '\3Dot5Dot0Dot5')) {
+if (! function_exists(__NAMESPACE__ . '\register3Dot5Dot0Dot5')) {
     if (! class_exists('PublishPress\PimplePimple\Versions')) {
         require_once __DIR__ . '/Versions.php';
 
