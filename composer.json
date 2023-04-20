@@ -1,5 +1,6 @@
 {
   "name": "publishpress/pimple-pimple",
+  "version": "3.5.0.3",
   "type": "library",
   "description": "Pimple, a simple Dependency Injection Container, prefixed for PublishPress",
   "keywords": [
@@ -19,22 +20,30 @@
       "email": "help@publishpress.com"
     }
   ],
-  "autoload": {
-    "files": [
-      "src-prefixed/autoload.php"
-    ]
-  },
   "require": {
     "php": ">=7.2.5",
     "publishpress/psr-container": "^2.0.1.1"
   },
   "require-dev": {
     "pimple/pimple": "3.5.0",
-    "brianhenryie/strauss": "^0.14.0"
+    "brianhenryie/strauss": "^0.14.0",
+    "lucatume/wp-browser": "^3.1",
+    "codeception/module-asserts": "^1.0",
+    "codeception/module-phpbrowser": "^1.0",
+    "codeception/module-webdriver": "^1.0",
+    "codeception/module-db": "^1.0",
+    "codeception/module-filesystem": "^1.0",
+    "codeception/module-cli": "^1.0",
+    "codeception/util-universalframework": "^1.0",
+    "publishpress/codeception-extension-extended-copier": "^1.0",
+    "publishpress/version-loader-generator": "^1.0"
   },
   "extra": {
+    "generator":{
+      "lib-class-test": "class_exists('PublishPress\\Pimple\\Container')"
+    },
     "strauss": {
-      "target_directory": "src-prefixed",
+      "target_directory": "lib",
       "namespace_prefix": "PublishPress\\",
       "classmap_prefix": "PublishPress_",
       "constant_prefix": "PUBLISHPRESS_",
@@ -72,16 +81,24 @@
     "strauss": [
       "vendor/bin/strauss"
     ],
-    "updateLibraries": [
+    "generate-files": [
+      "vendor/bin/version-loader-generator"
+    ],
+    "update-autoloader": [
       "php scripts/post-update.php"
     ],
     "post-install-cmd": [
       "@strauss",
-      "@updateLibraries"
+      "@update-autoloader",
+      "@generate-files"
     ],
     "post-update-cmd": [
       "@strauss",
-      "@updateLibraries"
+      "@update-autoloader",
+      "@generate-files"
+    ],
+    "test": [
+      "vendor/bin/codecept run wpunit"
     ]
   }
 }

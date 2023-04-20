@@ -21,11 +21,11 @@ function deleteDirectory($dir) {
 // Update autoload-classmap.php removing lines starting with "PublishPress\Psr\Container".
 function updateAutoloadClassmap()
 {
-    $file = __DIR__ . '/../src-prefixed/autoload-classmap.php';
+    $file = __DIR__ . '/../lib/autoload-classmap.php';
     $contents = file_get_contents($file);
     $contents = preg_replace('/[\s]*[\'"]PublishPress\\\Psr\\\Container\\\.*,/', '', $contents);
     file_put_contents($file, $contents);
 }
 
-deleteDirectory(__DIR__ . '/../src-prefixed/psr');
+deleteDirectory(__DIR__ . '/../lib/psr');
 updateAutoloadClassmap();
