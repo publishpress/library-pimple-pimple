@@ -17,6 +17,8 @@ The installable [package][package-url] and [implementations][implementation-url]
 
 This library depends on `psr/container` but that package is prefixed on another repository and is called `publishpress/psr-container`. This will be adjusted by the script `post-update.php`. In order to update this library, you need to:
 
-1. Run the command `composer update`;
-2. Commit the changes;
-3. Create a new release on GitHub naming it with the original version number and incrementing the fourth digit with the current iteration;
+1. Update the `composer.json` file with the new version of the original library and the current iteration (4th digit);
+2. Run the command `composer update`. The scripts on the `src` folder will be auto generated;
+3. Run the tests `composer test`;
+4. Commit the changes;
+5. Create a new release on GitHub naming it with the original version number and incrementing the fourth digit with the current iteration;
