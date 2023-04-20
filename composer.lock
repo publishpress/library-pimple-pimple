@@ -4,33 +4,46 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#installing-dependencies",
         "This file is @generated automatically"
     ],
-    "content-hash": "06c26447bf2b29d34d34da11a3be2df6",
+    "content-hash": "0522ef91bfa405e8cb2a548ecc6e64ef",
     "packages": [
         {
             "name": "publishpress/psr-container",
-            "version": "2.0.2.2",
+            "version": "2.0.1.4",
             "source": {
                 "type": "git",
                 "url": "https://github.com/publishpress/library-psr-container.git",
-                "reference": "871ce3f6fdd21e7aad6d763a95b0155d2132a625"
+                "reference": "e70c1ee9ee267b19b0ac2299cc6640f775cb9ce7"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/publishpress/library-psr-container/zipball/871ce3f6fdd21e7aad6d763a95b0155d2132a625",
-                "reference": "871ce3f6fdd21e7aad6d763a95b0155d2132a625",
+                "url": "https://api.github.com/repos/publishpress/library-psr-container/zipball/e70c1ee9ee267b19b0ac2299cc6640f775cb9ce7",
+                "reference": "e70c1ee9ee267b19b0ac2299cc6640f775cb9ce7",
                 "shasum": ""
             },
             "require": {
-                "php": ">=7.4.0"
+                "php": ">=7.2.5"
             },
             "require-dev": {
                 "brianhenryie/strauss": "^0.14.0",
-                "psr/container": "2.0.2"
+                "codeception/module-asserts": "^1.0",
+                "codeception/module-cli": "^1.0",
+                "codeception/module-db": "^1.0",
+                "codeception/module-filesystem": "^1.0",
+                "codeception/module-phpbrowser": "^1.0",
+                "codeception/module-webdriver": "^1.0",
+                "codeception/util-universalframework": "^1.0",
+                "lucatume/wp-browser": "^3.1",
+                "psr/container": "2.0.1",
+                "publishpress/codeception-extension-extended-copier": "^1.0",
+                "publishpress/version-loader-generator": "^1.0"
             },
             "type": "library",
             "extra": {
+                "generator": {
+                    "lib-class-test": "interface_exists('PublishPress\\Psr\\Container\\ContainerInterface')"
+                },
                 "strauss": {
-                    "target_directory": "src-prefixed",
+                    "target_directory": "lib",
                     "namespace_prefix": "PublishPress\\",
                     "classmap_prefix": "PublishPress_",
                     "constant_prefix": "PUBLISHPRESS_",
@@ -57,7 +70,7 @@
             },
             "autoload": {
                 "files": [
-                    "src-prefixed/autoload.php"
+                    "lib/include.php"
                 ]
             },
             "notification-url": "https://packagist.org/downloads/",
@@ -86,9 +99,9 @@
             ],
             "support": {
                 "issues": "https://github.com/publishpress/library-psr-container/issues",
-                "source": "https://github.com/publishpress/library-psr-container/tree/2.0.2.2"
+                "source": "https://github.com/publishpress/library-psr-container/tree/2.0.1.4"
             },
-            "time": "2023-04-18T21:39:47+00:00"
+            "time": "2023-04-20T15:02:02+00:00"
         }
     ],
     "packages-dev": [
@@ -4347,16 +4360,16 @@
         },
         {
             "name": "publishpress/version-loader-generator",
-            "version": "1.1.1",
+            "version": "1.1.3",
             "source": {
                 "type": "git",
                 "url": "https://github.com/publishpress/library-version-loader-generator.git",
-                "reference": "9e1198a1dc9460a2e656763d91f61212897c046b"
+                "reference": "3df37c0347e2a7fef26828ab152a134be65e2a57"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/publishpress/library-version-loader-generator/zipball/9e1198a1dc9460a2e656763d91f61212897c046b",
-                "reference": "9e1198a1dc9460a2e656763d91f61212897c046b",
+                "url": "https://api.github.com/repos/publishpress/library-version-loader-generator/zipball/3df37c0347e2a7fef26828ab152a134be65e2a57",
+                "reference": "3df37c0347e2a7fef26828ab152a134be65e2a57",
                 "shasum": ""
             },
             "require": {
@@ -4382,9 +4395,9 @@
             "description": "Composer script to generate the version loader files for libraries on PubilshPress",
             "support": {
                 "issues": "https://github.com/publishpress/library-version-loader-generator/issues",
-                "source": "https://github.com/publishpress/library-version-loader-generator/tree/1.1.1"
+                "source": "https://github.com/publishpress/library-version-loader-generator/tree/1.1.3"
             },
-            "time": "2023-04-20T03:33:50+00:00"
+            "time": "2023-04-20T14:56:51+00:00"
         },
         {
             "name": "ralouphie/getallheaders",
