@@ -15,7 +15,8 @@ extensions:
                 0: "tests/_data/plugins/updated-lib-plugin/:%WP_ROOT_FOLDER%/wp-content/plugins/updated-lib-plugin"
                 1: "tests/_data/plugins/outdated-lib-plugin-1:%WP_ROOT_FOLDER%/wp-content/plugins/outdated-lib-plugin-1"
                 2: "tests/_data/plugins/outdated-lib-plugin-2:%WP_ROOT_FOLDER%/wp-content/plugins/outdated-lib-plugin-2"
-                3: "lib:%WP_ROOT_FOLDER%/wp-content/plugins/updated-lib-plugin/vendor/publishpress/pimplepimple/lib/"
+                3: "vendor:%WP_ROOT_FOLDER%/wp-content/plugins/updated-lib-plugin/vendor/"
+                4: "lib:%WP_ROOT_FOLDER%/wp-content/plugins/updated-lib-plugin/vendor/publishpress/pimplepimple/lib/"
     commands:
         - Codeception\Command\GenerateWPUnit
         - Codeception\Command\GenerateWPRestApi
