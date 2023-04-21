@@ -8,16 +8,16 @@
     "packages": [
         {
             "name": "publishpress/psr-container",
-            "version": "2.0.1.4",
+            "version": "2.0.1.5",
             "source": {
                 "type": "git",
                 "url": "https://github.com/publishpress/library-psr-container.git",
-                "reference": "e70c1ee9ee267b19b0ac2299cc6640f775cb9ce7"
+                "reference": "a1fbcd6f8e6922ef7ce7683787ee40898eb3f767"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/publishpress/library-psr-container/zipball/e70c1ee9ee267b19b0ac2299cc6640f775cb9ce7",
-                "reference": "e70c1ee9ee267b19b0ac2299cc6640f775cb9ce7",
+                "url": "https://api.github.com/repos/publishpress/library-psr-container/zipball/a1fbcd6f8e6922ef7ce7683787ee40898eb3f767",
+                "reference": "a1fbcd6f8e6922ef7ce7683787ee40898eb3f767",
                 "shasum": ""
             },
             "require": {
@@ -99,9 +99,9 @@
             ],
             "support": {
                 "issues": "https://github.com/publishpress/library-psr-container/issues",
-                "source": "https://github.com/publishpress/library-psr-container/tree/2.0.1.4"
+                "source": "https://github.com/publishpress/library-psr-container/tree/2.0.1.5"
             },
-            "time": "2023-04-20T15:02:02+00:00"
+            "time": "2023-04-21T02:37:40+00:00"
         }
     ],
     "packages-dev": [
@@ -4360,22 +4360,26 @@
         },
         {
             "name": "publishpress/version-loader-generator",
-            "version": "1.1.4",
+            "version": "1.1.5",
             "source": {
                 "type": "git",
                 "url": "https://github.com/publishpress/library-version-loader-generator.git",
-                "reference": "b638b3ee69a1090a278ddd027c75c7d967f72360"
+                "reference": "29265d0d794d4b1c26e8a312e68dd10a99dced14"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/publishpress/library-version-loader-generator/zipball/b638b3ee69a1090a278ddd027c75c7d967f72360",
-                "reference": "b638b3ee69a1090a278ddd027c75c7d967f72360",
+                "url": "https://api.github.com/repos/publishpress/library-version-loader-generator/zipball/29265d0d794d4b1c26e8a312e68dd10a99dced14",
+                "reference": "29265d0d794d4b1c26e8a312e68dd10a99dced14",
                 "shasum": ""
             },
             "require": {
                 "ext-json": "*"
             },
             "require-dev": {
+                "codeception/module-asserts": "^1.0",
+                "codeception/module-filesystem": "^1.0",
+                "codeception/util-universalframework": "^1.0",
+                "lucatume/wp-browser": "^3.1",
                 "php": ">=7.2.5"
             },
             "bin": [
@@ -4395,9 +4399,9 @@
             "description": "Composer script to generate the version loader files for libraries on PubilshPress",
             "support": {
                 "issues": "https://github.com/publishpress/library-version-loader-generator/issues",
-                "source": "https://github.com/publishpress/library-version-loader-generator/tree/1.1.4"
+                "source": "https://github.com/publishpress/library-version-loader-generator/tree/1.1.5"
             },
-            "time": "2023-04-20T15:45:33+00:00"
+            "time": "2023-04-20T20:13:14+00:00"
         },
         {
             "name": "ralouphie/getallheaders",

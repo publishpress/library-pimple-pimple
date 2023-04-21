@@ -17,6 +17,10 @@ if (! function_exists('add_action')) {
 }
 
 if (! function_exists(__NAMESPACE__ . '\register3Dot5Dot0Dot5')) {
+    if (! defined('PUBLISHPRESS_PIMPLE_PIMPLE_INCLUDED')) {
+        define('PUBLISHPRESS_PIMPLE_PIMPLE_INCLUDED', __DIR__);
+    }
+        
     if (! class_exists('PublishPress\PimplePimple\Versions')) {
         require_once __DIR__ . '/Versions.php';
 
@@ -36,6 +40,11 @@ if (! function_exists(__NAMESPACE__ . '\register3Dot5Dot0Dot5')) {
     function initialize3Dot5Dot0Dot5()
     {
         require_once __DIR__ . '/autoload.php';
+        
+        if (! defined('PUBLISHPRESS_PIMPLE_PIMPLE_VERSION')) {
+            define('PUBLISHPRESS_PIMPLE_PIMPLE_VERSION', '3.5.0.5');
+        }
+        
         do_action('publishpress_pimple_pimple_3Dot5Dot0Dot5_initialized');
     }
 }
