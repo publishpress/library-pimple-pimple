@@ -9,3 +9,4 @@ README.md export-ignore
 .env.testing.dist export-ignore
 .gitattributes export-ignore
 codeception.dist.yml export-ignore
+/lib/pimple/pimple/src/Pimple/Tests export-ignore
