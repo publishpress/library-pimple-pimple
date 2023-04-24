@@ -24,10 +24,10 @@ if (! function_exists(__NAMESPACE__ . '\register3Dot5Dot0Dot5')) {
     if (! class_exists('PublishPress\PimplePimple\Versions')) {
         require_once __DIR__ . '/Versions.php';
 
-        add_action('plugins_loaded', [Versions::class, 'initializeLatestVersion'], 1, 0);
+        add_action('plugins_loaded', [Versions::class, 'initializeLatestVersion'], -20, 0);
     }
 
-    add_action('plugins_loaded', __NAMESPACE__ . '\register3Dot5Dot0Dot5', 1, 0);
+    add_action('plugins_loaded', __NAMESPACE__ . '\register3Dot5Dot0Dot5', -20, 0);
 
     function register3Dot5Dot0Dot5()
     {
