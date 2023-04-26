@@ -16,7 +16,7 @@ if (! function_exists('add_action')) {
     return;
 }
 
-if (! function_exists(__NAMESPACE__ . '\register3Dot5Dot0Dot5')) {
+if (! function_exists(__NAMESPACE__ . '\register3Dot5Dot0Dot7')) {
     if (! defined('PUBLISHPRESS_PIMPLE_PIMPLE_INCLUDED')) {
         define('PUBLISHPRESS_PIMPLE_PIMPLE_INCLUDED', __DIR__);
     }
@@ -24,27 +24,27 @@ if (! function_exists(__NAMESPACE__ . '\register3Dot5Dot0Dot5')) {
     if (! class_exists('PublishPress\PimplePimple\Versions')) {
         require_once __DIR__ . '/Versions.php';
 
-        add_action('plugins_loaded', [Versions::class, 'initializeLatestVersion'], -20, 0);
+        add_action('plugins_loaded', [Versions::class, 'initializeLatestVersion'], -185, 0);
     }
 
-    add_action('plugins_loaded', __NAMESPACE__ . '\register3Dot5Dot0Dot5', -20, 0);
+    add_action('plugins_loaded', __NAMESPACE__ . '\register3Dot5Dot0Dot7', -200, 0);
 
-    function register3Dot5Dot0Dot5()
+    function register3Dot5Dot0Dot7()
     {
         if (! class_exists('PublishPress\Pimple\Container')) {
             $versions = Versions::getInstance();
-            $versions->register('3.5.0.5', __NAMESPACE__ . '\initialize3Dot5Dot0Dot5');
+            $versions->register('3.5.0.7', __NAMESPACE__ . '\initialize3Dot5Dot0Dot7');
         }
     }
 
-    function initialize3Dot5Dot0Dot5()
+    function initialize3Dot5Dot0Dot7()
     {
         require_once __DIR__ . '/autoload.php';
         
         if (! defined('PUBLISHPRESS_PIMPLE_PIMPLE_VERSION')) {
-            define('PUBLISHPRESS_PIMPLE_PIMPLE_VERSION', '3.5.0.5');
+            define('PUBLISHPRESS_PIMPLE_PIMPLE_VERSION', '3.5.0.7');
         }
         
-        do_action('publishpress_pimple_pimple_3Dot5Dot0Dot5_initialized');
+        do_action('publishpress_pimple_pimple_3Dot5Dot0Dot7_initialized');
     }
 }

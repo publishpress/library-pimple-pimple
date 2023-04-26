@@ -45,7 +45,9 @@
   },
   "extra": {
     "generator":{
-      "lib-class-test": "class_exists('PublishPress\\Pimple\\Container')"
+      "lib-class-test": "class_exists('PublishPress\\Pimple\\Container')",
+      "action-initialize-priority": "-185",
+      "action-register-priority": "-200"
     },
     "strauss": {
       "target_directory": "lib",
