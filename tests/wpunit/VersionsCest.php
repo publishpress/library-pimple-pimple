@@ -21,7 +21,7 @@ class VersionsCest
         $I->assertEquals([
             '2.0.0.1' => 'PublishPress\PimplePimple\initialize2Dot0Dot0Dot1',
             '2.0.0.2' => 'PublishPress\PimplePimple\initialize2Dot0Dot0Dot2',
-            '3.5.0.8' => 'PublishPress\PimplePimple\initialize3Dot5Dot0Dot8',
+            '3.5.0.9' => 'PublishPress\PimplePimple\initialize3Dot5Dot0Dot9',
         ], $registeredVersions);
     }
 
@@ -31,7 +31,7 @@ class VersionsCest
 
         $latestVersion = $versions->latestVersion();
 
-        $I->assertEquals('3.5.0.8', $latestVersion);
+        $I->assertEquals('3.5.0.9', $latestVersion);
     }
 
     public function testLatestVersionCallbackIsTheLastOne(WpunitTester $I)
@@ -40,7 +40,7 @@ class VersionsCest
 
         $latestVersionCallback = $versions->latestVersionCallback();
 
-        $I->assertEquals('PublishPress\PimplePimple\initialize3Dot5Dot0Dot8', $latestVersionCallback);
+        $I->assertEquals('PublishPress\PimplePimple\initialize3Dot5Dot0Dot9', $latestVersionCallback);
     }
 
     public function testInitializeLatestVersion(WpunitTester $I)
@@ -51,7 +51,7 @@ class VersionsCest
 
         $I->assertTrue(class_exists('PublishPress\Pimple\Container'));
 
-        $didAction = (bool)did_action('publishpress_pimple_pimple_3Dot5Dot0Dot8_initialized');
+        $didAction = (bool)did_action('publishpress_pimple_pimple_3Dot5Dot0Dot9_initialized');
         $I->assertTrue($didAction);
     }
 }
