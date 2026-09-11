@@ -14,4 +14,5 @@
  * @package UpdatedLibPlugin
  */
 
-require_once __DIR__ . '/vendor/publishpress/pimplepimple/lib/include.php';
+require_once __DIR__ . '/vendor/publishpress/psr-container/lib/include.php';
+require_once __DIR__ . '/vendor/publishpress/pimple-pimple/lib/include.php';

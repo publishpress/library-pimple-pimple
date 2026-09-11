@@ -1,5 +1,5 @@
 paths:
-    tests: tests
+    tests: tests/codeception
     output: tests/_output
     data: tests/_data
     support: tests/_support
@@ -8,23 +8,15 @@ actor_suffix: Tester
 extensions:
     enabled:
         - Codeception\Extension\RunFailed
-        - PublishPress\Codeception\Extension\ExtendedCopier
+        - Helper\FixtureCopier
     config:
-        PublishPress\Codeception\Extension\ExtendedCopier:
+        Helper\FixtureCopier:
             files:
-                0: "tests/_data/plugins/updated-lib-plugin/:%WP_ROOT_FOLDER%/wp-content/plugins/updated-lib-plugin"
-                1: "tests/_data/plugins/outdated-lib-plugin-1:%WP_ROOT_FOLDER%/wp-content/plugins/outdated-lib-plugin-1"
-                2: "tests/_data/plugins/outdated-lib-plugin-2:%WP_ROOT_FOLDER%/wp-content/plugins/outdated-lib-plugin-2"
-                3: "vendor:%WP_ROOT_FOLDER%/wp-content/plugins/updated-lib-plugin/vendor/"
-                4: "lib:%WP_ROOT_FOLDER%/wp-content/plugins/updated-lib-plugin/vendor/publishpress/pimplepimple/lib/"
-    commands:
-        - Codeception\Command\GenerateWPUnit
-        - Codeception\Command\GenerateWPRestApi
-        - Codeception\Command\GenerateWPRestController
-        - Codeception\Command\GenerateWPRestPostTypeController
-        - Codeception\Command\GenerateWPAjax
-        - Codeception\Command\GenerateWPCanonical
-        - Codeception\Command\GenerateWPXMLRPC
+                "tests/_data/plugins/updated-lib-plugin/": "%WP_TESTS_ROOT_DIR%/wp-content/plugins/updated-lib-plugin"
+                "tests/_data/plugins/outdated-lib-plugin-1": "%WP_TESTS_ROOT_DIR%/wp-content/plugins/outdated-lib-plugin-1"
+                "tests/_data/plugins/outdated-lib-plugin-2": "%WP_TESTS_ROOT_DIR%/wp-content/plugins/outdated-lib-plugin-2"
+                "vendor": "%WP_TESTS_ROOT_DIR%/wp-content/plugins/updated-lib-plugin/vendor/"
+                "lib": "%WP_TESTS_ROOT_DIR%/wp-content/plugins/updated-lib-plugin/vendor/publishpress/pimple-pimple/lib/"
 params:
-    - .env.testing
+    - .env
 bootstrap: _bootstrap.php

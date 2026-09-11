@@ -1,4 +1,6 @@
 /vendor/
 /.idea/
-.env.testing
 /tests/_output
+.env
+codeception.yml
+dev-workspace-cache/
