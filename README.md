@@ -1,26 +1,18 @@
 Prefixed Pimple library for PublishPress
 ==============
 
-Prefixed version of `pimple/pimple`.
+Prefixed version of [`pimple/pimple`](https://github.com/silexphp/Pimple). Namespace `Pimple` becomes `PublishPress\Pimple`.
 
-This repository holds all interfaces related to [PSR-11 (Container Interface)][psr-url], prefixed for PublishPress.
-
-Note that this is not a Container implementation of its own. It is merely abstractions that describe the components of a Dependency Injection Container.
-
-The installable [package][package-url] and [implementations][implementation-url] are listed on Packagist.
-
-[psr-url]: https://www.php-fig.org/psr/psr-11/
-[package-url]: https://packagist.org/packages/psr/container
-[implementation-url]: https://packagist.org/providers/psr/container-implementation
+This package depends on the already-prefixed [`publishpress/psr-container`](https://packagist.org/packages/publishpress/psr-container) for PSR-11 types. Strauss still rewrites `Psr\Container` references inside Pimple, then `scripts/post-update.php` removes the nested `lib/psr` copy so runtime uses the shared package.
 
 ## How to update the prefixed library
 
-This library depends on `psr/container` but that package is prefixed on another repository and is called `publishpress/psr-container`. This will be adjusted by the script `post-update.php`. In order to update this library, you need to:
+1. Change the pinned upstream version in `require-dev` (`pimple/pimple`) to the target (still a fixed constraint). Keep `publishpress/psr-container` in `require`.
+2. Set `version` to that upstream version plus the next fourth digit (`3.5.0` → `3.5.0.1` for a first prefixed build, or increment the fourth digit for another prefixing pass of the same upstream).
+3. Run `composer update`. Strauss prefixes into `lib/`; `post-update.php` strips nested PSR-11 from `lib/` and `lib/composer/`; the generator refreshes `include.php` and `VersionLoader.php`.
+4. Copy `.env.example` to `.env` (fill `WP_TESTS_*`). Run `composer test:unit`, then `composer test:integration`. Version-loader tests are Integration. Without `.env`, Codeception exits immediately.
+5. Review the prefixed code in `lib/` by hand. On Strauss 0.29, extra package files and `lib/composer/` are normal. For this PSR-0 library, live classes are under `lib/pimple/pimple/src/PublishPress/Pimple/` — delete any leftover unprefixed `src/Pimple/` tree. Confirm `lib/psr` is gone and Composer maps no longer reference `PublishPress\Psr\Container`.
+6. Commit.
+7. Create a GitHub release named with the four-digit version (for example `3.5.0.11`) so Packagist sees the tag.
 
-1. Update the version constraint for the original library on the `composer.json` file;
-2. Update the version number for this prefixed library in the `composer.json` file with the new version of the original library and the current iteration (4th digit);
-3. Run the command `composer update`. The scripts on the `lib` folder will be auto prefixed and the files `include.php` and `Versions.php` class auto generated;
-4. Run the tests `composer test` to run tests and make sure the Version class is working properly;
-5. Make a manual check in the prefixed library;
-6. Commit the changes;
-7. Create a new release on GitHub naming it with the original version number and incrementing the fourth digit with the current iteration;
+Then run `composer update` in the plugins that consume the package.
